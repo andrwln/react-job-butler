@@ -1,54 +1,75 @@
-import {actionTypes} from './actions'
+import { actionTypes } from './actions';
 
-export const exampleInitialState = {
-  count: 0,
-  error: false,
-  lastUpdate: 0,
-  light: false,
-  placeholderData: null
-}
+export const initialState = {
+  jobs: [
+    {
+      id: 1,
+      company_name: 'Google',
+      position_title: 'Software Engineer II',
+      current_status: 'Applied'
+    },
+    {
+      id: 2,
+      company_name: 'Apple',
+      position_title: 'CAO',
+      current_status: 'Interview Scheduled'
+    },
+    {
+      id: 1,
+      company_name: 'Facebook',
+      position_title: 'CEO',
+      current_status: 'Offer Received'
+    }
+  ]
+};
 
-function reducer (state = exampleInitialState, action) {
+function reducer(state = initialState, action) {
   switch (action.type) {
     case actionTypes.FAILURE:
       return {
         ...state,
-        ...{error: action.error}
-      }
+        ...{ error: action.error }
+      };
 
-    case actionTypes.INCREMENT:
+    case actionTypes.SAVE_JOB:
       return {
         ...state,
-        ...{count: state.count + 1}
-      }
+        jobs: [...state.jobs, action.payload]
+      };
 
-    case actionTypes.DECREMENT:
-      return {
-        ...state,
-        ...{count: state.count - 1}
-      }
+    // case actionTypes.INCREMENT:
+    //   return {
+    //     ...state,
+    //     ...{count: state.count + 1}
+    //   }
 
-    case actionTypes.RESET:
-      return {
-        ...state,
-        ...{count: exampleInitialState.count}
-      }
+    // case actionTypes.DECREMENT:
+    //   return {
+    //     ...state,
+    //     ...{count: state.count - 1}
+    //   }
 
-    case actionTypes.LOAD_DATA_SUCCESS:
-      return {
-        ...state,
-        ...{placeholderData: action.data}
-      }
+    // case actionTypes.RESET:
+    //   return {
+    //     ...state,
+    //     ...{count: exampleInitialState.count}
+    //   }
 
-    case actionTypes.TICK_CLOCK:
-      return {
-        ...state,
-        ...{lastUpdate: action.ts, light: !!action.light}
-      }
+    // case actionTypes.LOAD_DATA_SUCCESS:
+    //   return {
+    //     ...state,
+    //     ...{placeholderData: action.data}
+    //   }
+
+    // case actionTypes.TICK_CLOCK:
+    //   return {
+    //     ...state,
+    //     ...{lastUpdate: action.ts, light: !!action.light}
+    //   }
 
     default:
-      return state
+      return state;
   }
 }
 
-export default reducer
+export default reducer;
