@@ -1,0 +1,6 @@
+.cache
+frontend/node_modules
+frontend/.next
+frontend/yarn-error.log
+frontend/store/
+frontend/.env

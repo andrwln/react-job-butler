@@ -41576,7 +41576,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var config = {
-  apiKey: 'AIzaSyDTvaRJ7N0kPSbyqNq-Z8-g9uiMRuwoUMo',
+  apiKey: "AIzaSyDTvaRJ7N0kPSbyqNq-Z8-g9uiMRuwoUModfd",
   authDomain: 'react-jb.firebaseapp.com',
   databaseURL: 'https://react-jb.firebaseio.com',
   projectId: 'react-jb',

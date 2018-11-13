@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const config = {
-  apiKey: 'AIzaSyDTvaRJ7N0kPSbyqNq-Z8-g9uiMRuwoUMo',
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: 'react-jb.firebaseapp.com',
   databaseURL: 'https://react-jb.firebaseio.com',
   projectId: 'react-jb',
