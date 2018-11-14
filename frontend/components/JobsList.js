@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
@@ -20,13 +20,13 @@ const JobsListHeaders = styled.div`
 `;
 
 function JobsList({ jobs }) {
-  console.log('props: ', jobs);
   return (
     <JobsListContainer>
       <JobsListHeaders>
         <div>Company Name</div>
         <div>Position Title</div>
         <div>Status</div>
+        <div>Edit</div>
       </JobsListHeaders>
       {jobs.map((job, i) => {
         return <JobListItem key={i} job={job} />;

@@ -10,7 +10,7 @@ class Jobs extends Component {
     const jobs = [];
     const snapshot = await jobsRef.get();
     snapshot.forEach(doc => {
-      jobs.push(doc.data());
+      jobs.push({ ...doc.data(), id: doc.id });
     });
     this.props.dispatch(setJobsList({ jobs }));
   }

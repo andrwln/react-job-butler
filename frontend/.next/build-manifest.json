@@ -14,6 +14,10 @@
     "/jobs": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
+    ],
+    "/edit": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }

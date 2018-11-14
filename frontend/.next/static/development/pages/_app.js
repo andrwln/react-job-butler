@@ -15878,20 +15878,20 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_1__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 24
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_3__["Provider"], {
         store: store,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 25
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, _extends({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 26
         },
         __self: this
       }))));
@@ -15924,11 +15924,12 @@ function (_App) {
                 pageProps = _context.sent;
 
               case 6:
+                pageProps.query = ctx.query;
                 return _context.abrupt("return", {
                   pageProps: pageProps
                 });
 
-              case 7:
+              case 8:
               case "end":
                 return _context.stop();
             }
