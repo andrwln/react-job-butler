@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Router from 'next/router';
+import axios from 'axios';
 
 import firebase from '../store/firebase';
 import Form from './styled/Form';
@@ -24,6 +25,17 @@ class CreateEditJob extends Component {
       job: { ...this.state.job, [e.target.name]: e.target.value }
     });
   };
+  scrapePosting = async e => {
+    const Axios = axios.create({});
+    const url = e.target.value;
+    const response = await Axios.post(
+      `http://${process.env.SCRAPER_API}/joblink`,
+      {
+        url_path: url
+      }
+    );
+    console.log('post response: ', url, response);
+  };
   handleSubmit = async e => {
     e.preventDefault();
     const job = { ...this.state.job };
@@ -47,6 +59,16 @@ class CreateEditJob extends Component {
           <div>Loading...</div>
         ) : (
           <Form method="post" onSubmit={this.handleSubmit}>
+            <label>
+              Job URL
+              <input
+                type="text"
+                name="url"
+                placeholder="Job URL"
+                value={job.url}
+                onChange={this.scrapePosting}
+              />
+            </label>
             <label>
               Company Name
               <input
